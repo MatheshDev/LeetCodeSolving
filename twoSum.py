@@ -5,3 +5,14 @@ class Solution:
             for j in range(i+1, len(nums)):
                 if nums[i] + nums[j] == target:
                     return [i,j]
+
+
+#Dictionary method
+
+def twoSum(nums, target):
+  seen = {}
+  for i, num in enumerate(nums):
+    if (target - num) in seen:
+      return [seen[target - num], i]
+    else:
+      seen[num] = i
